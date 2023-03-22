@@ -83,7 +83,6 @@ const ProductDetail = (props) => {
           </ColumnText>
         </TableBody>
       </Table>
-
     </>
   )
 }

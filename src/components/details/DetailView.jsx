@@ -31,10 +31,7 @@ const RightContainer = styled(Grid)`
 const DetailView = () => {
     
     const fetchId = useParams();
-    
     const [itemData, setItemData] = useState([]);
-    
-
     const items = useSelector((state) => state.allCart.item);
     useEffect(() => {
         setItemData(items[fetchId.id-1]);
