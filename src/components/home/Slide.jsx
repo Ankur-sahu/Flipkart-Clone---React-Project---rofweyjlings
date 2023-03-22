@@ -1,13 +1,10 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-
 import { Box, Button, Divider, styled, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 //for react countdown
 import Countdown from 'react-countdown';
-
 import { useSelector } from 'react-redux';
-
 
 // Carousel breakpoints
 const responsive = {
@@ -67,27 +64,28 @@ const Text = styled(Typography)`
 
 // //=============================================================== function starts===================================================
 
-const Slide = ({ title, timer }) => {
-
-    const items = useSelector((state) => state.allCart.item);
-
-    const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
-
-    const renderer = ({ hours, minutes, seconds }) => {
-        return <Box variant="span">{hours}:{minutes}:{seconds} Left</Box>
+const Slide = (props) => {
+    const { title } = props
+    let items = useSelector((state) => state.allCart.item);
+    
+    if (props.filterText) {
+        if (props.filterText === "electronics"){
+            let test = items.filter((item) => {
+                return item.category.toLowerCase().includes(props.filterText.toLowerCase())
+            })
+            items = [...test]
+        }
+        if (props.filterText === "clothing"){
+            let test = items.filter((item) => {
+                return item.category.toLowerCase().includes(props.filterText.toLowerCase())
+            })
+            items = [...test]
+        }
     }
-
     return (
         <Component>
             <Deal>
                 <DealText>{title}</DealText>
-                {
-                    timer &&
-                    <Timer>
-                        <img src={timerURL} alt="timer" style={{ width: 24, marginRight: 10 }} />
-                        <Countdown date={Date.now() + 5.04e+7} renderer={renderer} />
-                    </Timer>
-                }
                 <ViewAllButton variant='container' color="primary">View All</ViewAllButton>
             </Deal>
             <Divider />

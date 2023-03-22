@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import { Typography, Menu, MenuItem, Box, styled } from '@mui/material';
 import { PowerSettingsNew } from '@mui/icons-material';
 
@@ -12,7 +11,7 @@ const Logout = styled(Typography)`
     margin-left: 5px;
 `;
 
-const Profile = ({ localUserName, accountPresent, setAccountPresent }) => {
+const Profile = ({ localUserName, setAccountPresent }) => {
     const [open, setOpen] = useState(false);
 
     const handleClick = (event) => {
@@ -27,7 +26,6 @@ const Profile = ({ localUserName, accountPresent, setAccountPresent }) => {
         localStorage.removeItem('signup');
         setAccountPresent(false);
         alert("Logged Out ✈ Successfully!")
-        // window.location.reload();
     }
 
     return (

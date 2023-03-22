@@ -1,17 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-
 import { Box } from '@mui/material';
-
 import Header from './components/header/Header';
-
 import Home from './components/home/Home';
 import Cart from './components/cart/Cart'
 import DetailView from './components/details/DetailView';
 import Shipping from "./components/shipping/Shipping";
 import Context from "./context/Context";
-
 
 //=======================================function starts=======================================
 function App() {

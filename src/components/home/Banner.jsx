@@ -3,16 +3,12 @@ import React from 'react'
 //importing the carousel 
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
-
 import { styled } from '@mui/material';
-
 //Array data
 import { bannerData } from '../../constants/data';
 
-
 const responsive = {
     superLargeDesktop: {
-        // the naming can be any, depends on you.
         breakpoint: { max: 4000, min: 3000 },
         items: 1
     },
@@ -38,7 +34,6 @@ const Image = styled('img')(({ theme }) => ({
         height: 100
     }
 }));
-
 
 //function starts
 const Banner = () => {

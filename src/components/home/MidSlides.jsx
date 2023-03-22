@@ -1,6 +1,5 @@
 import { Box, styled } from '@mui/material'
 import React from 'react'
-
 import Slide from './Slide'
 
 const Component = styled(Box)`
@@ -35,7 +34,8 @@ const MidSlides = (props) => {
           <LeftComponent>
               <Slide
                   title={props.title}
-                  timer={props.timer} 
+                  timer={props.timer}
+                  filterText = {"electronics"}
               />
           </LeftComponent>
           <RightComponent>

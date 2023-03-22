@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { Box, Typography, styled } from '@mui/material';
 import { useDispatch } from 'react-redux';
@@ -39,11 +39,7 @@ const Discount = styled(Typography)`
     font-size: 16px; 
     color: green;
 `
-
-
 const TotalView = ({ cart, totalPrice, totalQuantity }) => {
-    
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -51,7 +47,6 @@ const TotalView = ({ cart, totalPrice, totalQuantity }) => {
     }, []);
 
     const discount = 5;
-
     return (
         <Box>  
            
@@ -60,21 +55,17 @@ const TotalView = ({ cart, totalPrice, totalQuantity }) => {
             </Header>
             <Container>
                 <Typography>Price ({cart?.length} item)
-                    {/* <Price component="span">₹220</Price> */}
                     <Price component="span">${totalPrice}</Price>
                 </Typography>
                 <Typography>Discount
-                    {/* <Price component="span">-$0</Price> */}
                     <Price component="span">-${discount}</Price>
                 </Typography>
                 <Typography>Delivery Charges
                     <Price component="span">$40</Price>
                 </Typography>
                 <TotalAmount>Total Amount
-                    {/* <Price>₹2000</Price> */}
                     <Price>${totalPrice - discount + 40}</Price>
                 </TotalAmount>
-                {/* <Discount>You will save ₹10 on this order</Discount> */}
                 <Discount>You will save ${40 - discount} on this order</Discount>
             </Container>
         </Box>

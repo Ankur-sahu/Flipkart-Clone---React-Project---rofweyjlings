@@ -78,7 +78,7 @@ const Shipping = () => {
   const [userPhone, setUserPhone] = useState('');
 
   const [accountPresent, setAccountPresent] = useState(true);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const openDialog = () => {
     setOpen(true);

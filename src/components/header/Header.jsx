@@ -10,10 +10,7 @@ import {
   styled,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
 import { Link } from "react-router-dom";
-
-//components
 import Search from "./Search";
 import CustomButtons from "./CustomButtons";
 

@@ -44,18 +44,11 @@ const StyledButton = styled(Button)`
 `;
 
 const Cart = () => {
-
     const { cart, totalPrice, totalQuantity } = useSelector((state) => state.allCart);
-    // console.log(cart);
-
     const navigate = useNavigate();
-
     const goToPlaceOrder = () => {
         navigate('/shipping');
     };
-// console.log(cart)
-    
-
     return (
         <>
             {
@@ -88,5 +81,4 @@ const Cart = () => {
         </>
     )
 }
-
 export default Cart

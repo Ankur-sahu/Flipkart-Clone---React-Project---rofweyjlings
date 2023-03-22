@@ -37,21 +37,10 @@ const Search = () => {
 
   const [text, setText] = useState('');
   const [productData, setProductData] = useState([]);
-  const [typed, setTyped] = useState(false)
-
   const items =  useSelector((state) => state.allCart.item);
   useEffect(() => {
     setProductData(items);
-      //  fetch(`https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products`)
-      // .then(response => response.json())
-      // .then(json => setProductData(json))
   }, [items]);
-
-  // const getProd = ()=>{
-  //   console.log(text,"search testing")
-  //   setText(text)
-
-  // }
 
   const getText = (text) => {
     setText(text);
@@ -62,7 +51,6 @@ const Search = () => {
       <InputSearchBase
         placeholder="Search for products, brands and more"
         onChange={(e) => getText(e.target.value)}
-        // onBlur={getProd}
         value={text}
 
       />

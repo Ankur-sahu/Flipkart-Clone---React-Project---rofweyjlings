@@ -63,8 +63,6 @@ const CartItem = ({ item, totalQuantity, totalprice }) => {
         <Component>
             <LeftComponent>
                 <img src={item.image} style={{ height: 110, width: 110 }} />
-
-                {/* <GroupButton item={item} totalQuantity={totalQuantity} /> */}
                 
                 <ButtonComponent>
                     <StyledButton onClick={() => dispatch(decreaseItemQuantity(item.id))}>-</StyledButton>
@@ -75,7 +73,6 @@ const CartItem = ({ item, totalQuantity, totalprice }) => {
             </LeftComponent>
             <Box style={{ margin: 20 }}>
                 <Typography>{item.title}</Typography>
-                {/* <Typography>{addEllipsis(item.title)}</Typography> */}
                 <SmallText>Seller:RetailNet
                     <span><img src={fassured} style={{ width: 50, marginLeft: 10 }} /></span>
                 </SmallText>

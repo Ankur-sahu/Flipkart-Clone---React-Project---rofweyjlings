@@ -1,15 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react'
-
 import { Box, Typography, Badge, Button, styled } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-//components
 import LoginDialog from '../login/LoginDialog';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCartTotal } from '../../feature/cartSlice';
-
 import Profile from './Profile';
-
 
 const Container = styled(Link)(({ theme }) => ({
   display: 'flex',
@@ -88,7 +84,6 @@ const CustomButton = () => {
 
       <Container to='/cart'>
         <Badge badgeContent={totalQuantity} color="secondary">
-          {/* cart icon */}
           <ShoppingCart />
         </Badge>
         <Typography style={{ marginLeft: 10 }}>Cart</Typography>

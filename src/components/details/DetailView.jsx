@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grid, styled } from '@mui/material';
 import ActionItem from './ActionItem';
-
-// import axios from 'axios';
-
 import ProductDetail from './ProductDetail';
 
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Component = styled(Box)`
     margin-top: 55px;
@@ -41,7 +38,6 @@ const DetailView = () => {
     const items = useSelector((state) => state.allCart.item);
     useEffect(() => {
         setItemData(items[fetchId.id-1]);
-        // console.log(itemData)
     }, [fetchId]);
 
     

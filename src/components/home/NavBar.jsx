@@ -2,7 +2,6 @@ import React from 'react'
 import { Box, styled, Typography } from '@mui/material'
 import { navData } from '../../constants/data'
 
-
 const Component = styled(Box)(
     ({ theme }) => (
         {
@@ -25,7 +24,6 @@ const Text = styled(Typography)`
     font-weight: 600;
     font-family: inherit
 `
-
 // funtion starts
 const NavBar = () => {
     return (

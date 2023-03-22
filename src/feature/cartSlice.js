@@ -1,14 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-import { apiProductData } from '../App';
-import { useContext, useEffect, useState } from "react";
-
+import { createSlice } from "@reduxjs/toolkit";
 import productData from "../data/allProductData";
-
-// export const fetchApiData = createAsyncThunk('fetchDatas', async () => {
-//     const response = await fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products");
-//     return response.json();
-// });
 
 //Getting cartdata form localstorage
 const getLocalCartData = () => {
@@ -22,15 +13,12 @@ const getLocalCartData = () => {
         return JSON.parse(localData);
 }
 
-
 const initialState = {
-    // cart: [],
     cart: getLocalCartData(),
     item: productData,
     totalQuantity: 0,
     totalPrice: 0,
 };
-
 
 export const cartSlice = createSlice({
     name: 'cart',
@@ -46,10 +34,7 @@ export const cartSlice = createSlice({
         getCartTotal: (state) => {
             let { totalQuantity, totalPrice } = state.cart.reduce(
                 (cartTotal, cartItem) => {
-                    // console.log("carttotal", cartTotal);
-                    // console.log("cartitem", cartItem);
                     const { price, quantity } = cartItem;
-                    // console.log(price, quantity);
                     const itemTotal = price * quantity;
                     cartTotal.totalPrice += itemTotal;
                     cartTotal.totalQuantity += quantity;
